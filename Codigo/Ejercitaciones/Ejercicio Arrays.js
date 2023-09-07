@@ -2,7 +2,7 @@
 
 /* 1)Declarar un array que vamos a llamar “clasificaciones” con los siguientes valores:
 Marcos, Franco, Agostina, Leon, Juan Cruz,Eduardo */
-
+const clasificaciones = ["Marcos", "Franco", "Agostina", "Leon", "Juan Cruz","Eduardo"]
 /* (vamos a suponer que esa es la orden de clasificación de un concurso) */
 
 /* 2)recorre el array (clasificaciones) e Imprime la clasificación actual.
