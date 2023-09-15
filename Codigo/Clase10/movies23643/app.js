@@ -28,15 +28,30 @@ btnNext.addEventListener('click', () => {
     };
 });
 
-const createMovieCard = (movie) => {
-    return `
-        <div class="card"> 
-            <img class="card__img" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" />
-            <h3 class="card__title">${movie.title}</h3>
-            <h4>Puntuación: ${movie.vote_average}</h4>
-            <h5>Votantes: ${movie.vote_count}
-        </div>
-    `
+const createMovieCard = (movie) => {    
+    const divCard = document.createElement('div');
+    divCard.classList.add('card');
+
+    const img = document.createElement('img');
+    img.classList.add('card__img');
+    img.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+
+    const title = document.createElement('h3');
+    title.classList.add('card__title');
+    title.textContent = movie.title;
+
+    const rating = document.createElement('h4');
+    rating.textContent = `Puntuación: ${movie.vote_average}`;
+
+    const voters = document.createElement('h5');
+    voters.textContent = `Votantes: ${movie.vote_count}`;
+
+    divCard.appendChild(img);
+    divCard.appendChild(title);
+    divCard.appendChild(rating);
+    divCard.appendChild(voters);
+
+    return divCard;
 };
 
 const getMoviesAxios = async () => {
@@ -45,12 +60,11 @@ const getMoviesAxios = async () => {
     headerSubtitle.innerHTML = textSub;
     try {
         let response = await axios(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es-MX&page=${page}`);  
-        if (response.status == 200) {
-            let movies = '';
+        if (response.status == 200) { 
+            divContainer.innerHTML = '';           
             response.data.results.forEach((movie) => {
-                movies += createMovieCard(movie);                
-            });
-            divContainer.innerHTML = movies;            
+                divContainer.appendChild(createMovieCard(movie));               
+            });                       
         } else if (response.status === 404) {
             console.log("error 404");
         };

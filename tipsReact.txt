@@ -1,0 +1,42 @@
+En consola(Ej. C:\Proyectos):
+	npx create-react-app NOMBRE_PROYECTO
+	(Quedaria: C:\Proyectos\NOMBRE_PROYECTO)
+	(Esta forma no se suele utilizar por la cantidad de cosas que instala que no vamos a utilizar)
+
+ó
+
+Tambien se puede utilziar Vite para generar un proyecto mas liviano y rapido:
+	En consola(Ej. C:\Proyectos):
+		npm init -y
+		npm create vite@latest
+		NOMBRE_PROYECTO
+		cd NOMBRE_PROYECTO
+		npm install
+		para correr el sv:
+		npm run dev
+		
+Los nombres de los componentes comienzan en Mayuscula, para diferenciarlos de una función.
+	(
+		Ej. Boton.jsx
+		function Boton (){
+			return(
+				<button>Ejemplo de boton</button>
+			)
+		}
+		export default Boton;
+	)
+Para incorporar el componente:
+	En index.js por Ej.
+		import Boton form './boton.jsx';	
+		Dentro de <React.StrictMode>:
+			<Boton/>
+		Para pasarle argumentos:
+			<Boton numero={2}/>
+		(
+			En Boton.jsx:
+				function Boton (props){
+					return(
+						<button>{props.numero}</button>
+					)
+				}
+		)

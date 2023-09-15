@@ -1,0 +1,3 @@
+Se borro app.js
+Se borro el import del index.js
+se quito el componente del render
