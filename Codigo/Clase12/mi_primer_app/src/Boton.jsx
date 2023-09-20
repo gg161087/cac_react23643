@@ -1,6 +1,6 @@
-function Boton ({numero}){
+function Boton (props){
     return(
-        <button>{numero}</button>
+        <button>{props.numero}</button>
     )
 }
 export default Boton;

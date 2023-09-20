@@ -1,29 +1,13 @@
-*Se crea el proyecto con:
-npx create-react-app movies-cac23643
-    Dentro del src del proyecto se crea un peliculas.json, simulando la respuesta de un endpoint:
-        [
-            {
-            "adult": false,
-            "backdrop_path": "/hJuDvwzS0SPlsE6MNFOpznQltDZ.jpg",
-            "genre_ids": [16, 12, 14, 10751, 28],
-            "id": 527774,
-            "original_language": "en",
-            "original_title": "Raya and the Last Dragon",
-            "overview": "Long ago, in the fantasy world of Kumandra, humans and dragons lived together in harmony. But when an evil force threatened the land, the dragons sacrificed themselves to save humanity. Now, 500 years later, that same evil has returned and it’s up to a lone warrior, Raya, to track down the legendary last dragon to restore the fractured land and its divided people.",
-            "popularity": 3686.429,
-            "poster_path": "/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg",
-            "release_date": "2021-03-03",
-            "title": "Raya and the Last Dragon",
-            "video": false,
-            "vote_average": 8.5,
-            "vote_count": 1407
-            },
-            ...mas ej.
-        ]
-    Borrar archivos del proyecto generado:
-        movies-cac23643/src/setupTest.js
-        movies-cac23643/src/reportWebVitals.js
-        (borrar import reportWebVitals from './reportWebVitals'; y reportWebVitals();) del movies-cac23643/src/index.js
-        movies-cac23643/src/logo.svg
-        movies-cac23643/src/app.test.js
-        (borrar import logo from './logo.svg'; y parte de lo que retorna la funcion de movies-cac23643/src/app.js)
+Para usar los estados en React hay que importar useState:
+import { useState } from 'react';
+const [count, setCount] = useState(0);
+Al usar useState devuelve un array de 2 posiciones(por eso el destructuring), la primera(count)el valor del estado
+la segunda la definicion del nombre de la funcion que va a cambiar el valor inicial(en este caso 0)
+Para actualizar solo un componente o elemento hay que importar useEffect:
+import { useState, useEffect } from 'react';
+Se utiliza cuando exista un cambio en este lugar, que haga tal cosa, por ejemplo:
+Cuando exista un cambio en la lista de producto (eliminar 1 por ej.) vas a ejecutar la funcion que me trae los productos actualizados
+dentro del componente (1er parametro funcion a ejecutar, 2do paramentro donde detectar el cambio):
+	useEffect(() => {
+        console.log("cambio el contador");
+    }, [count])
