@@ -1,0 +1,14 @@
+.card {
+	text-align: center;
+}
+
+.card__title {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.card .card__img {
+	width: 100%;
+	margin-bottom: 0.625rem;
+	border-radius: 1rem;
+}
