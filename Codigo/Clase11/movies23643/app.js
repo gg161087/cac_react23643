@@ -28,28 +28,44 @@ btnNext.addEventListener('click', () => {
     };
 });
 
-const createMovieCard = (movie) => {    
+const createMovieCard = (movie) => {
+    const pathFront = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    const pathBack = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
+    
     const divCard = document.createElement('div');
     divCard.classList.add('card');
 
-    const img = document.createElement('img');
-    img.classList.add('card__img');
-    img.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    const divCardImg = document.createElement('div');
+    divCardImg.classList.add('card__img');
+    divCardImg.style.backgroundImage = `url(${pathFront})`;
+    divCardImg.style.hover
+    divCard.appendChild(divCardImg);
+
+    const divCardText = document.createElement('div');
+    divCardText.classList.add('card__text');
 
     const title = document.createElement('h3');
     title.classList.add('card__title');
     title.textContent = movie.title;
+    divCardText.appendChild(title);
 
-    const rating = document.createElement('h4');
+    const rating = document.createElement('p');
     rating.textContent = `Puntuación: ${movie.vote_average}`;
+    divCardText.appendChild(rating);
 
-    const voters = document.createElement('h5');
+    const voters = document.createElement('p');
     voters.textContent = `Votantes: ${movie.vote_count}`;
+    divCardText.appendChild(voters);
 
-    divCard.appendChild(img);
-    divCard.appendChild(title);
-    divCard.appendChild(rating);
-    divCard.appendChild(voters);
+    divCard.appendChild(divCardText);
+
+    divCard.addEventListener('mouseover', function () {
+        divCardImg.style.backgroundImage = `url(${pathBack})`;
+    });
+    
+    divCard.addEventListener('mouseout', function () {
+        divCardImg.style.backgroundImage = `url(${pathFront})`;
+    }); 
 
     return divCard;
 };
@@ -62,7 +78,7 @@ const getMoviesAxios = async () => {
         let response = await axios(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es-MX&page=${page}`);  
         if (response.status == 200) { 
             divContainer.innerHTML = '';           
-            response.data.results.forEach((movie) => {
+            response.data.results.forEach((movie) => {              
                 divContainer.appendChild(createMovieCard(movie));               
             });                       
         } else if (response.status === 404) {

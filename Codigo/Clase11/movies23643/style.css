@@ -7,7 +7,6 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 	background: #403f3f;
-	color:  #e0e0e0;
 }
 .header{
 	text-align: center;
@@ -24,19 +23,44 @@ body {
 	gap: 2.5rem;
 }
 
-.container .card {
-	text-align: center;
+.card {
+	width: 200px;
+    height: 300px;
+    background: white;
+    border-radius: 30px;
+    transition: 0.2s ease-in-out;
+}
+.card__img{   
+    width: 100%; 
+    height: 70%;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.card__text {    
+    height: 30%;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.contenedor .card .card__title {
-	font-size: 1rem;
-	font-weight: 600;
+.card__text .card__title {
+    font-family: 'Lucida Sans' sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
 }
-
-.container .card .card__img {
-	width: 100%;
-	margin-bottom: 0.625rem;
-	border-radius: 1rem;
+.card__text p {
+    font-family: 'Lucida Sans' sans-serif;
+    color: #1d1c1c;
+    font-size: 13px;
+}
+.card:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #bebebe,
+               -5px -5px 10px #bebebe;
 }
 
 .pagination {
