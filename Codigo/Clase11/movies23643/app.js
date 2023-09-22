@@ -5,7 +5,7 @@ const apiKey = '05123a40afbe112743ba73d98505223b';
 const divHeader = document.querySelector('.header');
 const headerSubtitle = document.querySelector('.header__subtitle');
 const divContainer = document.querySelector('.container');
-const divDetails = document.querySelector('.details');
+const divContainerDetails = document.querySelector('.container_details');
 const btnPrevious = document.querySelector('#btn_previous');
 const btnNext = document.querySelector('#btn_next');
 const btnVolver = document.querySelector('#btn_volver');
@@ -38,6 +38,38 @@ btnVolver.addEventListener('click', () => {
     divDetails.innerHTML = '';
     btnVolver.style.display = 'none';
 });
+
+const createMovieDetails = (movie) => {
+    const pathFront = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    const pathBack = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
+    
+    const divDetails = document.createElement('div');
+    divDetails.classList.add('details');
+
+    const divDetailsImg = document.createElement('div');
+    divDetailsImg.classList.add('details__img');
+    divDetailsImg.style.backgroundImage = `url(${pathFront})`;
+    divDetailsImg.style.hover
+    divDetails.appendChild(divDetailsImg);
+
+    const divCardText = document.createElement('div');
+    divCardText.classList.add('card__text');
+
+    const title = document.createElement('h3');
+    title.classList.add('card__title');
+    title.textContent = movie.title;
+    divCardText.appendChild(title);
+
+    const rating = document.createElement('p');
+    rating.textContent = `Puntuación: ${movie.vote_average}`;
+    divCardText.appendChild(rating);
+
+    const voters = document.createElement('p');
+    voters.textContent = `Votantes: ${movie.vote_count}`;
+    divCardText.appendChild(voters);
+
+    divCard.appendChild(divCardText);
+}
 
 const createMovieCard = (movie) => {
     const pathFront = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
