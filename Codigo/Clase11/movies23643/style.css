@@ -24,8 +24,8 @@ body {
 }
 
 .card {
-	width: 200px;
-    height: 300px;
+	width: 220px;
+    height: 350px;
     background: white;
     border-radius: 30px;
     transition: 0.2s ease-in-out;

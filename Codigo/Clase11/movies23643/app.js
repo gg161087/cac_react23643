@@ -5,10 +5,14 @@ const apiKey = '05123a40afbe112743ba73d98505223b';
 const divHeader = document.querySelector('.header');
 const headerSubtitle = document.querySelector('.header__subtitle');
 const divContainer = document.querySelector('.container');
+const divDetails = document.querySelector('.details');
 const btnPrevious = document.querySelector('#btn_previous');
 const btnNext = document.querySelector('#btn_next');
+const btnVolver = document.querySelector('#btn_volver');
+const divCards = document.querySelectorAll('.card');
 
 window.addEventListener('load', () => {
+    btnVolver.style.display = 'none';
     getMoviesAxios();
 });
 
@@ -26,6 +30,13 @@ btnNext.addEventListener('click', () => {
         page++;   
         getMoviesAxios();
     };
+});
+btnVolver.addEventListener('click', () => {
+    divContainer.style.display = 'grid';
+    btnNext.style.display = 'block';
+    btnPrevious.style.display = 'block';
+    divDetails.innerHTML = '';
+    btnVolver.style.display = 'none';
 });
 
 const createMovieCard = (movie) => {
@@ -78,8 +89,17 @@ const getMoviesAxios = async () => {
         let response = await axios(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es-MX&page=${page}`);  
         if (response.status == 200) { 
             divContainer.innerHTML = '';           
-            response.data.results.forEach((movie) => {              
-                divContainer.appendChild(createMovieCard(movie));               
+            response.data.results.forEach((movie) => {                 
+                let card = createMovieCard(movie);
+                card.addEventListener('click', () => {
+                    divContainer.style.display = 'none';
+                    btnNext.style.display = 'none';
+                    btnPrevious.style.display = 'none';
+                    btnVolver.style.display = 'block';
+                    divDetails.appendChild(card);
+                    console.log(movie.id);                 
+                });
+                divContainer.appendChild(card);               
             });                       
         } else if (response.status === 404) {
             console.log("error 404");
