@@ -35,8 +35,8 @@ btnVolver.addEventListener('click', () => {
     divContainer.style.display = 'grid';
     btnNext.style.display = 'block';
     btnPrevious.style.display = 'block';
-    divDetails.innerHTML = '';
     btnVolver.style.display = 'none';
+    divContainerDetails.innerHTML = '';
 });
 
 const createMovieDetails = (movie) => {
@@ -47,7 +47,7 @@ const createMovieDetails = (movie) => {
     divDetails.classList.add('details');
 
     const divDetailsImg = document.createElement('div');
-    divDetailsImg.classList.add('details__img');
+    divDetailsImg.classList.add('details__img');    
     divDetailsImg.style.backgroundImage = `url(${pathFront})`;
     divDetailsImg.style.hover
     divDetails.appendChild(divDetailsImg);
@@ -68,7 +68,9 @@ const createMovieDetails = (movie) => {
     voters.textContent = `Votantes: ${movie.vote_count}`;
     divCardText.appendChild(voters);
 
-    divCard.appendChild(divCardText);
+    divDetails.appendChild(divCardText);
+    
+    return divDetails
 }
 
 const createMovieCard = (movie) => {
@@ -128,7 +130,9 @@ const getMoviesAxios = async () => {
                     btnNext.style.display = 'none';
                     btnPrevious.style.display = 'none';
                     btnVolver.style.display = 'block';
-                    divDetails.appendChild(card);
+                    let detailMovie = createMovieDetails(movie)
+                    divContainerDetails.appendChild(detailMovie);
+                    divContainerDetails.style.display = 'block'
                     console.log(movie.id);                 
                 });
                 divContainer.appendChild(card);               
