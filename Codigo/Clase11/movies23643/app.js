@@ -40,25 +40,38 @@ btnVolver.addEventListener('click', () => {
 });
 
 const createMovieDetails = (movie) => {
-    const pathFront = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    const pathFront = `https://image.tmdb.org/t/p/w300${movie.poster_path}`;
     const pathBack = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
     
+    console.log(movie);
     const divDetails = document.createElement('div');
     divDetails.classList.add('details');
 
     const divDetailsImg = document.createElement('div');
-    divDetailsImg.classList.add('details__img');    
-    divDetailsImg.style.backgroundImage = `url(${pathFront})`;
-    divDetailsImg.style.hover
+    divDetailsImg.classList.add('details__img');  
+    
+    const imgFront = document.createElement('img');
+    imgFront.src = pathFront;
+    divDetailsImg.appendChild(imgFront);
+
     divDetails.appendChild(divDetailsImg);
 
     const divCardText = document.createElement('div');
-    divCardText.classList.add('card__text');
+    divCardText.classList.add('details__text');
 
-    const title = document.createElement('h3');
-    title.classList.add('card__title');
+    const title = document.createElement('h2');
+    title.classList.add('details__title');
     title.textContent = movie.title;
     divCardText.appendChild(title);
+
+    const originalTitle = document.createElement('h3');
+    originalTitle.classList.add('details__title');
+    originalTitle.textContent = `Titulo original: ${movie.original_title}`;
+    divCardText.appendChild(originalTitle);
+
+    const overview = document.createElement('p');
+    overview.textContent = `Resumen: ${movie.overview}`;
+    divCardText.appendChild(overview);
 
     const rating = document.createElement('p');
     rating.textContent = `Puntuación: ${movie.vote_average}`;
@@ -68,7 +81,16 @@ const createMovieDetails = (movie) => {
     voters.textContent = `Votantes: ${movie.vote_count}`;
     divCardText.appendChild(voters);
 
+    const releaseDate = document.createElement('p');
+    releaseDate.textContent = `Fecha de lanzamiento: ${movie.release_date}`;
+    divCardText.appendChild(releaseDate);
+
     divDetails.appendChild(divCardText);
+
+    const imgBack = document.createElement('img');
+    imgBack.src = pathBack;    
+    divCardText.appendChild(imgBack)
+
     
     return divDetails
 }
@@ -132,7 +154,7 @@ const getMoviesAxios = async () => {
                     btnVolver.style.display = 'block';
                     let detailMovie = createMovieDetails(movie)
                     divContainerDetails.appendChild(detailMovie);
-                    divContainerDetails.style.display = 'block'
+                    divContainerDetails.style.display = 'flex'
                     console.log(movie.id);                 
                 });
                 divContainer.appendChild(card);               
