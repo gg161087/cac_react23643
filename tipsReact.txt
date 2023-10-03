@@ -9,6 +9,8 @@ Tambien se puede utilziar Vite para generar un proyecto mas liviano y rapido:
 	En consola(Ej. C:\Proyectos):
 		npm init -y
 		npm create vite@latest
+		ó
+		npm create vite
 		NOMBRE_PROYECTO
 		cd NOMBRE_PROYECTO
 		npm install
