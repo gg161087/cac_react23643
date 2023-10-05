@@ -1,13 +1,11 @@
-import peliculas from './peliculas.json';
-import { PeliculasCard } from './PeliculasCard.jsx';
+import movies from '../movies.json';
+import { MovieCard } from './MovieCard.jsx';
 
-import './PeliculasGrid.css'
-
-export const PeliculasGrid = () => {
+export const MoviesGrid = () => {
     return (
         <div className="container">
-            {peliculas.map((pelicula) => (   
-                <PeliculasCard pelicula={pelicula}></PeliculasCard>            
+            {movies.map((movie) => (   
+                <MovieCard movie={movie}></MovieCard>            
             ))}
             {/* <ul className="moviesGrid">            
                 {peliculas.map((pelicula) => (   
