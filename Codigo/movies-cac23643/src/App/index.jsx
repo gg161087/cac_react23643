@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { MoviesGrid } from '../components/MoviesGrid/index.jsx';
+import { ButtonBox } from '../components/ButtonBox/index.jsx';
 
-import { MoviesGrid } from './components/MoviesGrid.jsx';
-import { ButtonBox } from './components/ButtonBox.jsx';
+import './App.css'
 
 function App() {    
 

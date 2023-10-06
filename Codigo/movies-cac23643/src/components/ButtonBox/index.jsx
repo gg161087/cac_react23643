@@ -1,3 +1,5 @@
+import './ButtonBox.css'
+
 export const ButtonBox = () => {
     return (
         <div className="pagination">

@@ -11,14 +11,17 @@ Currently, two official plugins are available:
     Se inicio proyecto con Vite
     Se crean componentes y se estructura:
         /src
-            /assets
-                /css
-                    App.css (Se movio desde src)
+            /App
+                index.jsx (rename App.jsx)
+                App.css               
+            /components                            
+                /ButtonBox (Se creo el componente pero sin logica, solo visual)
+                    index.jsx
                     ButtonBox.css
+                /MovieCard
+                    index.jsx
                     MovieCard.css
+                /MoviesGrid
+                    index.jsx
                     MoviesGrid.css
-            /components                
-                ButtonBox.jsx (Se creo el componente pero sin logica, solo visual)
-                MovieCard.jsx
-                MoviesGrid.jsx
         movies.json (simulando la respuesta de un endpoint de peliculas)

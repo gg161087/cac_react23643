@@ -1,9 +1,0 @@
-.container {
-	width: 90%;
-	max-width: 1000px;
-	margin: 2.5rem auto 100px auto;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	-ms-grid-columns: repeat(4, 1fr);
-	gap: 2.5rem;
-}

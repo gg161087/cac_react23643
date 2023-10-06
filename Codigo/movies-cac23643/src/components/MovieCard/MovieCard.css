@@ -1,0 +1,32 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	width: 220px;		
+}
+
+.card__title {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.card__img img {
+	display: flex;	
+	border-top-left-radius: 1rem;
+	border-top-right-radius: 1rem;
+	width: 220px;
+	
+}
+.card__description {		
+	height: 80px;	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+ 	align-items: center;
+	background-color: aliceblue;
+	color: black;
+	border-bottom-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
