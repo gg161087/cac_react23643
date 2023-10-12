@@ -8,23 +8,8 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 [Clase 15] 4/10/2023:
-    Se inicio proyecto con Vite
-    Se crean componentes y se estructura:
-        /src
-            /App
-                index.jsx (rename App.jsx)
-                App.css               
-            /components                            
-                /ButtonBox (Se creo el componente pero sin logica, solo visual)
-                    index.jsx
-                    ButtonBox.css
-                /MovieCard
-                    index.jsx
-                    MovieCard.css
-                /MoviesGrid
-                    index.jsx
-                    MoviesGrid.css
-        movies.json (simulando la respuesta de un endpoint de peliculas)
+    Se creo un proyecto de react con vite
+    Se crea un componente Boton dinamico
 
 [Clase 16] 9/10/2023:
     Se creo un proyecto de react con vite

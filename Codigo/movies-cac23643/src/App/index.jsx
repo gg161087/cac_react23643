@@ -1,5 +1,5 @@
 import { MoviesGrid } from '../components/MoviesGrid/index.jsx';
-import { ButtonBox } from '../components/ButtonBox/index.jsx';
+import { FooterBar } from '../components/FooterBar/index.jsx';
 
 import './App.css'
 
@@ -12,7 +12,7 @@ function App() {
             </header>
             <main>
                 <MoviesGrid></MoviesGrid>
-                <ButtonBox></ButtonBox>
+                <FooterBar></FooterBar>
             </main>
         </>
     )
