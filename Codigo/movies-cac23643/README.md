@@ -25,3 +25,27 @@ Currently, two official plugins are available:
                     index.jsx
                     MoviesGrid.css
         movies.json (simulando la respuesta de un endpoint de peliculas)
+
+[Clase 16] 9/10/2023:
+    Se creo un proyecto de react con vite
+    Se limpio y se creo el counter click
+
+[Clase 17] 11/10/2023:   
+    Se inicio proyecto con Vite (npm create vite)
+    Se crean componentes y se estructura:
+        /src
+            /App
+                index.jsx (rename App.jsx)
+                App.css               
+            /components                            
+                /ButtonBox (Se creo el componente pero sin logica, solo visual)
+                    index.jsx
+                    ButtonBox.css
+                /MovieCard
+                    index.jsx
+                    MovieCard.css
+                /MoviesGrid
+                    index.jsx
+                    MoviesGrid.css
+                /data                
+                    movies.json (simulando la respuesta de un endpoint de peliculas)
