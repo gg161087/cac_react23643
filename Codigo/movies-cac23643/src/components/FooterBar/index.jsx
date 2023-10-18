@@ -8,7 +8,7 @@ export const FooterBar = () => {
                     <button id="btn_previous">Anterior</button>
                     <button id="btn_next">Siguiente</button>
                 </div>
-                <p>Todos los derechos reservados</p>
+                <small className="copyright">Todos los derechos reservados ©</small>
             </div>
         </div>
     )
