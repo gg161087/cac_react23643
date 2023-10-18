@@ -1,20 +1,17 @@
-import { MoviesGrid } from '../components/MoviesGrid/index.jsx';
-import { FooterBar } from '../components/FooterBar/index.jsx';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+import { LandingPage } from '../pages/LandingPage.jsx';
 
 import './App.css'
 
 function App() {    
 
     return (
-        <>
-            <header className="header">
-                <h1>Movies CAC23643</h1>
-            </header>
-            <main>
-                <MoviesGrid></MoviesGrid>
-                <FooterBar></FooterBar>
-            </main>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<LandingPage/>}/>          
+            </Routes>                       
+        </BrowserRouter>
     )
 }
 

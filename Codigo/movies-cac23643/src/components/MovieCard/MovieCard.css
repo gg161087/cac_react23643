@@ -17,7 +17,7 @@
 	border-top-left-radius: 1rem;
 	border-top-right-radius: 1rem;
 	width: 220px;
-	
+	min-height: 350px;
 }
 .card__description {		
 	height: 80px;	

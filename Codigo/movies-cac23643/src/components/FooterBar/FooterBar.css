@@ -46,7 +46,8 @@
 	font-weight: 600;
 	transition: .3s ease all;
 }
-.pagination button:hover {
+.footerbar__buttons button:hover {
+	color: #040D12;
 	background: #5C8374;
 } 
 .copyright{

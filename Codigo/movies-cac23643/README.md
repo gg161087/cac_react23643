@@ -1,12 +1,5 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
 [Clase 15] 4/10/2023:
     Se creo un proyecto de react con vite
     Se crea un componente Boton dinamico
@@ -20,7 +13,7 @@ Currently, two official plugins are available:
     Se crean componentes y se estructura:
         /src
             /App
-                index.jsx (rename App.jsx)
+                index.jsx (rename App.jsx) se importan los componentes y se exporta app
                 App.css               
             /components                            
                 /ButtonBox (Se creo el componente pero sin logica, solo visual)
@@ -34,3 +27,39 @@ Currently, two official plugins are available:
                     MoviesGrid.css
                 /data                
                     movies.json (simulando la respuesta de un endpoint de peliculas)
+            main.jsx (se import app para ser renderizado)
+
+[Clase 18] 18/10/2023:
+    Se re estructuro el proyecto e instalo npm i react-router-dom
+        /src
+            /App
+                index.jsx (se importan las pages, se agregaron rutas y se exporta app)
+                    import { BrowserRouter, Routes, Route } from 'react-router-dom';
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path='/' element={<LandingPage/>}/>          
+                        </Routes>                       
+                    </BrowserRouter>
+                App.css               
+            /components
+                /FooterBar
+                    FooterBar.css
+                    index.jsx
+                /Header
+                    Header.css
+                    index.jsx                            
+                /ButtonBox (Se creo el componente pero sin logica, solo visual)
+                    index.jsx
+                    ButtonBox.css
+                /MovieCard
+                    index.jsx
+                    MovieCard.css
+                /MoviesGrid
+                    index.jsx
+                    MoviesGrid.css
+            /pages
+                LandingPage.jsx (se importa header, moviesgrid y footer y se exporta)
+            /ultis
+                httpClient.js (un get dinamico a la api movies para reemplazar data/movies.json)
+            main.jsx (se import app para ser renderizado)
+    
