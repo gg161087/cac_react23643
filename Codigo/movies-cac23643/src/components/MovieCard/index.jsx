@@ -1,4 +1,4 @@
-import './MovieCard.css'
+import './MovieCard.css';
 
 export const MovieCard = ({movie}) => {
     const imgUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`

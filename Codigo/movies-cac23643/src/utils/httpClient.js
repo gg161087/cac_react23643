@@ -13,6 +13,7 @@ export const getDynamic = async (path) => {
     try {
         const response = await fetch(API+path, options)
         const data = response.json()
+        console.log(data);
         return data
     } catch (error) {
         console.log(error);

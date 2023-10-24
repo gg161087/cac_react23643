@@ -5,11 +5,10 @@
 }
   
 body {
+    display: grid;    
+    justify-items: center;
+    align-items: center;
     font-family: 'Montserrat', sans-serif;
     background: #040D12;
-    color:  #93B1A6;
-}
-.header{
-    text-align: center;
-    margin: 1rem;
+    color: #93B1A6;
 }

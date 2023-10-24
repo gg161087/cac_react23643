@@ -62,4 +62,19 @@
             /ultis
                 httpClient.js (un get dinamico a la api movies para reemplazar data/movies.json)
             main.jsx (se import app para ser renderizado)
-    
+
+[Clase 19] 23/10/2023:
+    Se Agrego el BarButton y DetailMovie:
+        /src                      
+            /components
+                /BarButton
+                    BarButton.css
+                    index.jsx
+            /pages
+                /DetailMovie
+                    DetailMovie.css
+                    index.jsx
+
+    Se agrego una nueva ruta al App/index.jsx a la etiqueta <Routes/> para poder redireccionar a detailmovie:
+        <Route path='/movie/:id' element={<DetailMovie/>}></Route>
+    Se obtiene el id del paramentro de la url con useParams de react-router-dom, para poder utilizar otro endpoint

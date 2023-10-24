@@ -7,6 +7,9 @@
 	-ms-grid-columns: repeat(4, 1fr);
 	gap: 2.5rem;
 }
+.container a{
+	text-decoration: none;
+}
 
 @media (max-width: 1116px) {
 	.container{

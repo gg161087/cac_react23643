@@ -1,9 +1,13 @@
+import { Link } from 'react-router-dom';
+
 import './Header.css';
 
-export const Header = () => {
+export const Header = ({title}) => {   
     return (
         <header className="header">
-            <h1>Movies CAC23643</h1>
+            <Link to='/'>
+                <h1>{title}</h1>
+            </Link>
         </header>
     )
 }

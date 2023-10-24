@@ -1,0 +1,24 @@
+.bar_button {
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 3.125rem;
+	width: 7rem;
+	background: #040D12;
+	color: #93B1A6;
+	border-radius: 1rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	transition: .3s ease all;
+}
+.footerbar__buttons{
+	display: flex;
+	gap: 2rem;
+}
+.bar_button:hover {
+	background: #5C8374;
+	color: #040D12;
+}
