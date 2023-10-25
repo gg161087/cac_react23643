@@ -1,0 +1,33 @@
+[Clase 18] 18/10/2023:
+    Se re estructuro el proyecto e instalo npm i react-router-dom
+        /src
+            /App
+                index.jsx (se importan las pages, se agregaron rutas y se exporta app)
+                    import { BrowserRouter, Routes, Route } from 'react-router-dom';
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path='/' element={<LandingPage/>}/>          
+                        </Routes>                       
+                    </BrowserRouter>
+                App.css               
+            /components
+                /FooterBar
+                    FooterBar.css
+                    index.jsx
+                /Header
+                    Header.css
+                    index.jsx                            
+                /ButtonBox (Se creo el componente pero sin logica, solo visual)
+                    index.jsx
+                    ButtonBox.css
+                /MovieCard
+                    index.jsx
+                    MovieCard.css
+                /MoviesGrid
+                    index.jsx
+                    MoviesGrid.css
+            /pages
+                LandingPage.jsx (se importa header, moviesgrid y footer y se exporta)
+            /ultis
+                httpClient.js (un get dinamico a la api movies para reemplazar data/movies.json)
+            main.jsx (se import app para ser renderizado)

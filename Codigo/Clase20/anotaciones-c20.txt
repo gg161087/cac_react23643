@@ -1,0 +1,27 @@
+#CRUD
+
+#Firebase
+    https://firebase.google.com/?hl=es
+    "Agregar proyecto", Deshabilitar Analytics, crear un con opcion web
+    copiar los datos de configuracion y pegarla en firebaseConfig/firebase.js del proyecto
+    #Firestore(para la base de datos)
+        En firebaseConfig/firebase.js agregar:
+        import { getFirestore } from '@firebase/firestore';
+
+#Bootstrap
+    Estilos de las tablas, para los datos obtenidos de firestore
+    En el main.jsx:
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    https://getbootstrap.com/
+
+#Sweetalert2
+    Para ventanas emergentes personalizadas
+    https://sweetalert2.github.io/
+
+#Font Awesome
+    en el index.html:
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==">
+
+#En terminal:
+    npm create vite
+    npm i firebase bootstrap react-router-dom sweetalert2 sweetalert2-react-content

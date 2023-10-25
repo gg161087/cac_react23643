@@ -1,0 +1,20 @@
+[Clase 17] 11/10/2023:   
+    Se inicio proyecto con Vite (npm create vite)
+    Se crean componentes y se estructura:
+        /src
+            /App
+                index.jsx (rename App.jsx) se importan los componentes y se exporta app
+                App.css               
+            /components                            
+                /ButtonBox (Se creo el componente pero sin logica, solo visual)
+                    index.jsx
+                    ButtonBox.css
+                /MovieCard
+                    index.jsx
+                    MovieCard.css
+                /MoviesGrid
+                    index.jsx
+                    MoviesGrid.css
+                /data                
+                    movies.json (simulando la respuesta de un endpoint de peliculas)
+            main.jsx (se import app para ser renderizado)
