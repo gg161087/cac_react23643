@@ -4,11 +4,12 @@ import { collection, getDocs, getDoc } from 'firebase/firestore';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
+const mySwal = withReactContent(Swal);
+
 import { db } from '../firebase/firebaseConfig.js';
 import { Header } from '../partials/Header.jsx';
 import { Footer } from '../partials/Footer.jsx';
-
-const mySwal = withReactContent(Swal);
+import { Table } from '../components/Table.jsx';
 
 import './Show.css';
 
@@ -24,6 +25,7 @@ export const Show = () => {
         <>
             <Header></Header>
             <h1>Aca se van a mostrar todos los documentos</h1>
+            <Table data='algo'></Table>
             <Footer></Footer>
         </>
     )
