@@ -1,5 +1,5 @@
 #CRUD
-
+    se creo el proyecto base "CRUD-Firebase"
 #Firebase
     https://firebase.google.com/?hl=es
     "Agregar proyecto", Deshabilitar Analytics, crear un con opcion web

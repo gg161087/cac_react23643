@@ -1,0 +1,27 @@
+Se crea la estrutucta del proyecto "CRUD-firebase"
+    /src
+        /pages
+            Create.jsx
+            Edit.jsx
+            Show.jsx
+            con sus css
+        /partials
+            Footer.jsx
+            Header.jsx
+            con sus css
+        /components
+            Table.jsx
+            Form.jsx
+    se importan en cada page los partials y cada componente correspondiente
+    se importan en App.jsx junto a BrowserRouter, Routes, Route de react-router-dom y retorna:
+        <div className="App">
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<Show></Show>}></Route>
+                    <Route path='/edit/:id' element={<Edit></Edit>}></Route>
+                    <Route path='/create' element={<Create></Create>}></Route>
+                </Routes>
+            </BrowserRouter>
+        </div>
+
+En firestore de firebase se crea la collection y un documento de la misma
