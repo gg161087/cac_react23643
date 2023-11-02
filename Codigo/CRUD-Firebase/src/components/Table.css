@@ -1,0 +1,16 @@
+.actions{
+    gap: 1rem;
+    display: flex;
+    flex-wrap: initial;   
+}
+.table{
+    padding: var(--spacing-8) var(--spacing-68) var(--spacing-8) var(--spacing-68);
+}
+.sectionCreate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create{    
+    width: 20%;
+}

@@ -16,6 +16,8 @@ Tambien se puede utilziar Vite para generar un proyecto mas liviano y rapido:
 		npm install
 		para correr el sv:
 		npm run dev
+	Sin necesidad de instalar dotenv para leer las variables de entorno:
+	import.meta.env.VITE_NOMBRE_VARIABLE (deben empezar con VITE_)
 		
 Los nombres de los componentes comienzan en Mayuscula, para diferenciarlos de una función.
 	(

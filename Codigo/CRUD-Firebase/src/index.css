@@ -84,10 +84,10 @@ input[type="text"]::placeholder {
 }
 
 /* HELPERS */
-.container {
+/* .container {
     max-width: 1200px;
     margin: 0 auto;
-}
+} */
 .grid-fixed {
     display: grid;
     grid-template-rows: auto 1fr auto;
