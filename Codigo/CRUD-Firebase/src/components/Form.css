@@ -1,8 +1,20 @@
+.form_container{
+    margin: 3rem;
+    padding: var(--spacing-8) var(--spacing-68) var(--spacing-8) var(--spacing-68);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .form{
+    background-color: var(--dark-bg-solid);
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 60%;
     align-items: center;
     justify-content: center;
     padding: var(--spacing-8) var(--spacing-68) var(--spacing-8) var(--spacing-68);
+}
+.form a, label{
+    color: var(--primary-solid);
 }

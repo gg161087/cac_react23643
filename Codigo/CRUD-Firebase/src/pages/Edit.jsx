@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getDoc, doc, updateDoc, Timestamp } from 'firebase/firestore';
 import Swal from 'sweetalert2';
@@ -22,10 +22,11 @@ export const Edit = () => {
 
     useEffect(() => {
         const fetchItem = async () => {
+            const heroeCollection = doc(db, 'heroes', id)
             try {
-                const playerDoc = await getDoc(doc(db, "heroes", id));
-                if (playerDoc.exists) {
-                    const data = playerDoc.data();
+                const heroeDoc = await getDoc(heroeCollection);
+                if (heroeDoc.exists) {
+                    const data = heroeDoc.data();
                     const dateOfBirth = new Date(data.dateOfBirth.seconds * 1000).toISOString().split('T')[0];
                     data.dateOfBirth = dateOfBirth;     
                     setDefaultValues(data);                    
@@ -41,11 +42,11 @@ export const Edit = () => {
 
     const handleEdit = async (values) => {
         try {
-            const playerDoc = doc(db, "heroes", id);
+            const editDoc = doc(db, 'heroes', id);
             const dateOfBirth = new Date(values.dateOfBirth);
             const formattedDate = Timestamp.fromDate(dateOfBirth);
             const {name, lastName, speciality} = values;
-            await updateDoc(playerDoc, {
+            await updateDoc(editDoc, {
                 name: name,
                 lastName: lastName,
                 speciality: speciality,

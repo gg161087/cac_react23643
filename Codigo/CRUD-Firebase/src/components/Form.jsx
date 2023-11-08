@@ -19,7 +19,7 @@ export const Form = ({ onSubmit, defaultValues, booleano }) => {
         onSubmit(values);
     };
     return (
-        <div className="container">
+        <div className="form_container">
                 <div className="form">
                     <form onSubmit={handleSubmit}>
                         <div className="mb-">
@@ -46,7 +46,7 @@ export const Form = ({ onSubmit, defaultValues, booleano }) => {
                                 <input type="text" name="speciality" value={values.speciality || ''} onChange={handleChange} />
                             </label>
                         </div>
-                        <button type="submit">{booleano ? 'Guardar' : 'Enviar'}</button>
+                        <button className='btn btn-success' type="submit">{booleano ? 'Guardar' : 'Enviar'}</button>
                     </form>
                     <Link to="/">Volver</Link>
                 </div>

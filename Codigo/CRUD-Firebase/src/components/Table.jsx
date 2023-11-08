@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Timestamp } from 'firebase/firestore';
-
 
 import './Table.css';
 
@@ -23,12 +21,17 @@ export const Table = ({ heroes, onDelet }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {heroes.map((heroe) => (
-                                
+                            {heroes.map((heroe) => (                                
                                 <tr key={heroe.id} className='tableRow'>
                                     <td>{heroe.name}</td>
                                     <td>{heroe.lastName}</td>
-                                    <td>{heroe.dateOfBirth.toDate().toLocaleDateString()}</td>
+                                    <td>
+                                    {(() => {
+                                        const dateOfBirth = new Date(heroe.dateOfBirth.seconds * 1000).toISOString().split('T')[0];
+                                        const parts = dateOfBirth.split('-');
+                                        return `${parts[2]}/${parts[1]}/${parts[0]}`;
+                                    })()}
+                                    </td>
                                     <td>{heroe.speciality}</td>
                                     <td className='actions'>
                                         <Link to={`edit/${heroe.id}`} className="btn btn-light"><i className="fa-sharp fa-solid fa-pencil"></i></Link>
