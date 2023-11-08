@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './Form.css';
 
-export const Form = ({ onSubmit, defaultValues, booleano }) => {
+export const Form = ({ onSubmit, defaultValues, title, edit }) => {
     const [values, setValues] = useState(defaultValues || {});
 
     const handleChange = (e) => {
@@ -20,36 +20,29 @@ export const Form = ({ onSubmit, defaultValues, booleano }) => {
     };
     return (
         <div className="form_container">
-                <div className="form">
-                    <form onSubmit={handleSubmit}>
-                        <div className="mb-">
-                            <label className="form-label">
-                                Nombre:
-                                <input type="text" name="name" value={values.name || ''} onChange={handleChange} />
-                            </label>
-                        </div>
-                        <div className="mb-">
-                            <label className="form-label">
-                                Apellido:
-                                <input type="text" name="lastName" value={values.lastName || ''} onChange={handleChange} />
-                            </label>
-                        </div>
-                        <div className="mb-">
-                            <label className="form-label">
-                                Fecha de Nacimiento:
-                                <input type="date" name="dateOfBirth" value={values.dateOfBirth || ''} onChange={handleChange} />
-                            </label>
-                        </div>
-                        <div className="mb-">
-                            <label className="form-label">
-                                Especialidad:
-                                <input type="text" name="speciality" value={values.speciality || ''} onChange={handleChange} />
-                            </label>
-                        </div>
-                        <button className='btn btn-success' type="submit">{booleano ? 'Guardar' : 'Enviar'}</button>
-                    </form>
-                    <Link to="/">Volver</Link>
+            <form className='form' onSubmit={handleSubmit}>
+                <h2>{title}</h2>
+                <div className="mb-3">
+                    <label className="form-label">Nombre:</label>
+                    <input className='form-control' type="text" name="name" value={values.name || ''} onChange={handleChange}/>
                 </div>
-            </div>
+                <div className="mb-3">
+                    <label className="form-label">Apellido:</label>
+                    <input className='form-control' type="text" name="lastName" value={values.lastName || ''} onChange={handleChange}/>
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Fecha de Nacimiento:</label>
+                    <input className='form-control' type="date" name="dateOfBirth" value={values.dateOfBirth || ''} onChange={handleChange}/>
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Especialidad:</label>
+                    <input className='form-control' type="text" name="speciality" value={values.speciality || ''} onChange={handleChange}/>
+                </div>
+                <div className="mb-3 actions">
+                    <Link to="/">Volver</Link>
+                    <button className='btn btn-success' type="submit">{edit ? 'Guardar' : 'Enviar'}</button>
+                </div>
+            </form>
+        </div>
     )
 }

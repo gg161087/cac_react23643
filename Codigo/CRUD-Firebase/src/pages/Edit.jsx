@@ -66,7 +66,7 @@ export const Edit = () => {
         <>
             <Header></Header>
             {Object.keys(defaultValues).length !== 0 ? (
-                <Form onSubmit={handleEdit} defaultValues={defaultValues} booleano={true}></Form>
+                <Form onSubmit={handleEdit} defaultValues={defaultValues} title='Editar Heroe' edit={true}></Form>
             ) : (
                 <p>Cargando...</p>
             )}

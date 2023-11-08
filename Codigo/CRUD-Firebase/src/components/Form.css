@@ -1,20 +1,22 @@
 .form_container{
-    margin: 3rem;
-    padding: var(--spacing-8) var(--spacing-68) var(--spacing-8) var(--spacing-68);
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin: 1rem;
+    /* padding: var(--spacing-8) var(--spacing-68) var(--spacing-8) var(--spacing-68); */
 }
 
 .form{
     background-color: var(--dark-bg-solid);
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-8) var(--spacing-68) var(--spacing-8) var(--spacing-68);
+    padding: 1rem;
 }
-.form a, label{
+.form h2, .form a, label{
     color: var(--primary-solid);
+}
+.actions{
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }

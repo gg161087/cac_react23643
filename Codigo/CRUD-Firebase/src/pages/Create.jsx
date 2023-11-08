@@ -41,7 +41,7 @@ export const Create = () => {
     return (
         <>
         <Header></Header>
-        <Form onSubmit={handleCreate} booleano={false}></Form>
+        <Form onSubmit={handleCreate} title='Crear Heroe' edit={false}></Form>
         <Footer></Footer>
         </>
     )
