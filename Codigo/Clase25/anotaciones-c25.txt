@@ -1,0 +1,12 @@
+Crear un proyecto en node para el BACK
+En la terminal:
+npm init
+npm init -y (para version rapida)
+
+Modificar el package.json para poder utilizar import
+debajo del "main": "app.js",
+"type":"module",
+
+creamos servidor vanilla con los modulos propios de node
+
+y creamos un servidor con express
