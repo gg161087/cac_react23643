@@ -1,0 +1,64 @@
+Continuamos con el proyecto CaCFullStack/backend
+
+-Creamos database/db.js e importamos sequelize:
+import { Sequelize } from 'sequelize';
+export const db = new Sequelize('post23643', 'root', '', {
+    host: 'localhost',
+    dialect: 'mysql',
+    port: 3306
+})
+
+Representamos la tabla de mysql en codigo:
+-creamos models/postModel.js
+import { db } from './../database/db.js';
+import { DataTypes } from 'sequelize';
+export const postModel = db.define('posts', {
+    title: {type: DataTypes.STRING},
+    content: {type: DataTypes.STRING}
+})
+
+Creamos controllers/postModel.js:
+import { postModel } from './../models/postModel.js';
+const getAllPosts = async (req, res, next) => {
+    try {
+        const response = await postModel.findAll();
+        res.status(200).json(response);
+    } catch (error) {
+        console.log(error);
+    }
+}
+const getPostById = async (req, res, next) => {
+    const {id} = req.params
+    try {
+        const response = await postModel.findByPk(id);
+        if (!response) {
+            res.status(404).json({
+                success: false,
+                results: null,
+                message: 'bad request'
+            })
+        }
+        res.status(404).json({
+            success: true,
+            results: response
+        })
+    } catch (error) {
+        res.status(404).json({
+            success: false,
+            results: 'error, bad request'
+        })
+    }
+}
+export default {
+    getAllPosts,
+    getPostById
+}
+
+Creamos routes/postRoutes.js:
+import { Router } from 'express';
+import postController from './../controllers/postController.js';
+export const postRoutes = Router()
+postRoutes.get('/', postController.getAllPosts);
+postRoutes.get('/:id', postController.getPostById);
+
+importamos las rutas en el index.js
