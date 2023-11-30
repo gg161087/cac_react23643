@@ -1,3 +1,14 @@
+Clase:26:
+creamos proyecto CaCFullStack
+dentro la carpeta backend
+npm init -y
+npm i nodemon -D //para instalar como devDependecies y monitorear y cargar cambios sin parar el server
+npm i cors //para poder intercambiar informacion entre servidores
+npm i express //para poder crear y modularizar servidores
+npm i mysql2 //para las conecciones con la BD
+npm i sequelize //para crear tablas sin saber mysql
+
+CLASE 27:
 Continuamos con el proyecto CaCFullStack/backend
 
 -Creamos database/db.js e importamos sequelize:

@@ -20,7 +20,6 @@ const conn = async () => {
     }
 }
 
-
 app.listen(port, () => {
     conn()
     console.log(`servidor corriendo http://localhost:${port}`);
