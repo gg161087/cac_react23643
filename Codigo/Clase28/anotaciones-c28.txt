@@ -1,4 +1,4 @@
-Clase:26:
+CLASE 26:
 creamos proyecto CaCFullStack
 dentro la carpeta backend
 npm init -y
