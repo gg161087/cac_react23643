@@ -12,11 +12,9 @@ const options = {
 export const getDynamic = async (path) => {
     try {
         const response = await fetch(API+path, options)
-        const data = response.json()
-        console.log(data);
+        const data = await response.json()        
         return data
     } catch (error) {
         console.log(error);
-    }
-    
+    }   
 }

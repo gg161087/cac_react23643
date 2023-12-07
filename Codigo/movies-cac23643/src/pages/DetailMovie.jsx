@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { Header } from '../../components/Header/index.jsx';
-import { FooterBar } from '../../components/FooterBar/index.jsx';
-
-import { getDynamic } from '../../utils/httpClient.js';
-
-import './DetailMovie.css';
+import { Header } from './../components/Header.jsx';
+import { getDynamic } from '../utils/httpClient.js';
 
 export const DetailMovie = () => {
     const { id } = useParams();
@@ -26,7 +22,7 @@ export const DetailMovie = () => {
     return (
         <>
             <Header title='Movies CAC23643'></Header>
-            <div className="detail_container">
+            <div className="DetailContainer">
                 <img className="detail_container__img" src={imgURL} alt={movie.title} />
                 <div className="detail_container__description">
                     <h2><strong>Titulo:</strong>{movie.title}</h2>
@@ -34,7 +30,9 @@ export const DetailMovie = () => {
                     <p><strong>Generos:</strong>{movie.genres.map((genre) => genre.name).join(", ")}</p>
                 </div>
             </div>
-            {/* <FooterBar></FooterBar> */}
+            <div className='copyRight'>
+                <small>Todos los derechos reservados - Gonzalez Gonzalo</small>
+            </div>            
         </>
     )
 }

@@ -1,4 +1,4 @@
-import { BarButton } from '../BarButton/index.jsx';
+import { BarButton } from './BarButton.jsx';
 
 import './FooterBar.css'
 

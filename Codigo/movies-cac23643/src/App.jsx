@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
-import { LandingPage } from '../pages/LandingPage/index.jsx';
-import { DetailMovie } from '../pages/DetailMovie/index.jsx';
-
-import './App.css';
+import { LandingPage } from './pages/LandingPage.jsx';
+import { DetailMovie } from './pages/DetailMovie.jsx';
 
 export const App = () => {    
 

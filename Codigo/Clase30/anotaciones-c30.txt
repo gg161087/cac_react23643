@@ -1,0 +1,22 @@
+conocemos:
+npm run build
+dist
+gh-pages.
+
+Hacemos deploy del proyecto movies-cac23643:
+instalar gh-pages: 
+npm install gh-pages -D 
+
+Editar vite.config.js:
+export default defineConfig({
+  plugins: [react()],
+  base: "/NOMRE_REPO/"
+})
+npm run build
+
+Agregar al package.json en scripts:
+"deploy": "gh-pages -d dist"
+
+pushear los cambios
+
+npm run deploy
