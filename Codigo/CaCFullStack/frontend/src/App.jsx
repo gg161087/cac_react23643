@@ -14,7 +14,7 @@ export const App = () => {
             <Header></Header>
             <BrowserRouter>
                 <Routes>
-                    <Route path='/' index element={<Show></Show>}/>
+                    <Route path='/' element={<Show></Show>}/>
                     <Route path='/edit/:id' element={<Edit></Edit>}/>
                     <Route path='/create' element={<Create></Create>}/>
                 </Routes>

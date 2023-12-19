@@ -12,13 +12,16 @@ export const Show = () => {
     const [posts, setPosts] = useState([]);
 
     const getAllPost = async () => {
-        const response = await axios.get(API)
-        setPosts(response.data.results)
-        console.log(posts);
+        const { data } = await axios.get(API)
+        setPosts(data)        
     }
 
     const deletePost = async (id) => {
         const response = await axios.delete(`${API}/${id}`)
+        if (response) {
+            getAllPost()
+            alert('Borrado')            
+        }
     }
 
     useEffect(() => {
@@ -37,8 +40,8 @@ export const Show = () => {
                     <Icon css='icon' icon={faPlus} />
                 </Link>
             </div>
-            <table class="table">
-                <thead class="table-dark">
+            <table className="table">
+                <thead className="table-dark">
                     <tr>
                         <th>#</th>
                         <th>Title</th>

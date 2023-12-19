@@ -1,0 +1,10 @@
+CLASE 29:
+En el proyecto ./CaCFullStack npm create vite
+nombre: frontend
+npm i axios bootstrap react-router-dom
+
+en ./CaCFullStack/frontend/src/main.jsx
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+Clase 31:
+./CaCFullStack

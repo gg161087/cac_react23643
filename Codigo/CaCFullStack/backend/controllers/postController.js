@@ -2,43 +2,22 @@ import { postModel } from './../models/postModel.js';
 
 const getAllPosts = async (req, res, next) => {
     try {
-        const response = await postModel.findAll();
-        res.status(200).json({
-            success: true,
-            results: response
-        });
+        const posts = await postModel.findAll();
+        res.status(200).json(posts);
     } catch (error) {
         console.error(error);
-        res.status(500).json({
-            success: false,
-            results: null,
-            message: 'Error al obtener todos los posts.'
-        });
+        res.status(500).json({ message: 'Error al obtener todos los posts.'});
     }
 };
 
 const getPost = async (req, res, next) => {
     const { id } = req.params;
     try {
-        const response = await postModel.findByPk(id);
-        if (!response) {
-            return res.status(404).json({
-                success: false,
-                results: null,
-                message: 'El post no fue encontrado.'
-            });
-        }
-        res.status(200).json({
-            success: true,
-            results: response
-        })
+        const post = await postModel.findByPk(id);   
+        res.status(200).json(post)
     } catch (error) {
         console.error(error);
-        res.status(500).json({
-            success: false,
-            results: null,
-            message: 'Error al obtener el post por ID.'
-        });
+        res.status(500).json({ message: 'Error al obtener el post por ID.'});
     }
 };
 
@@ -46,39 +25,30 @@ const createPost = async (req, res) => {
     const { title, content } = req.body;
 
     if (!title || !content) {
-        res.status(400).json({
-            success: false,
-            results: null,
+        res.status(400).json({           
             message: 'Campos inválidos. Se requieren título y contenido.'
         });
-    }
-
-    try {
-        const response = await postModel.create({
-            title: title,
-            content: content
-        });
-
-        if (!response) {
-            return res.status(500).json({
-                success: false,
-                results: null,
-                message: 'No se pudo crear el post.'
+    } else {
+        try {
+            const response = await postModel.create({
+                title: title,
+                content: content
             });
+    
+            if (!response) {
+                res.status(500).json({                   
+                    message: 'No se pudo crear el post.'
+                });
+            } else {
+                res.status(200).json({                    
+                    message: 'Post agregado exitosamente'
+                });
+            }    
+    
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: 'Error al crear el post.'});
         }
-
-        res.status(200).json({
-            success: true,
-            message: 'Post agregado exitosamente'
-        });
-
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({
-            success: false,
-            results: null,
-            message: 'Error al crear el post.'
-        });
     }
 };
 
@@ -87,9 +57,7 @@ const editPost = async (req, res) => {
     const { title, content } = req.body;
 
     if (!title || !content) {
-        return res.status(400).json({
-            success: false,
-            results: null,
+        return res.status(400).json({           
             message: 'Campos inválidos. Se requieren título y contenido.'
         });
     }
@@ -101,23 +69,17 @@ const editPost = async (req, res) => {
         );
 
         if (response[0] === 0 || !response) {
-            return res.status(404).json({
-                success: false,
-                results: null,
+            return res.status(404).json({               
                 message: 'El post no fue encontrado o no se pudo actualizar.'
             });
         }
-
-        res.status(200).json({
-            success: true,
+        res.status(200).json({            
             message: 'Post actualizado correctamente'
         });
 
     } catch (error) {
         console.error(error);
-        res.status(500).json({
-            success: false,
-            results: null,
+        res.status(500).json({            
             message: 'Error al actualizar el post.'
         });
     }
@@ -131,22 +93,17 @@ const deletePost = async (req, res) => {
         });
 
         if (response === 0) {
-            return res.status(404).json({
-                success: false,
-                results: null,
+            return res.status(404).json({                
                 message: 'El post no fue encontrado o no se pudo eliminar.'
             });
         }
-        res.status(200).json({
-            success: true,
+        res.status(200).json({            
             message: 'Post eliminado correctamente'
         });
 
     } catch (error) {
         console.error(error);
-        res.status(500).json({
-            success: false,
-            results: null,
+        res.status(500).json({            
             message: 'Error al eliminar el post.'
         });
     }
